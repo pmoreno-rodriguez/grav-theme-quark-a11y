@@ -73,7 +73,7 @@ To make modifications, you can copy the `user/themes/quark-a11y/quark-a11y.yaml`
 
 ## Custom Logos
 
-To add a custom logo, you should put the log into the `user/themes/quark-a11yark/images/logo` folder.  Standard image formats are support (`.png`,`.jpg`, `.gif`, `.svg`, etc.).  Then reference the logo via the YAML like so:
+To add a custom logo, you should put the log into the `user/themes/quark-a11/images/logo` folder.  Standard image formats are support (`.png`,`.jpg`, `.gif`, `.svg`, etc.).  Then reference the logo via the YAML like so:
 
 ```yaml
 custom_logo:
