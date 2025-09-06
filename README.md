@@ -39,7 +39,7 @@ The simplest way to install this theme is via the [Grav Package Manager (GPM)](h
 
     bin/gpm install quark-a11y
 
-This will install the Quark theme into your `/user/themes` directory within Grav. Its files can be found under `/your/site/grav/user/themes/quark-a11y`.
+This will install the Quark-A11y theme into your `/user/themes` directory within Grav. Its files can be found under `/your/site/grav/user/themes/quark-a11y`.
 
 ## Manual Installation
 
@@ -73,7 +73,7 @@ To make modifications, you can copy the `user/themes/quark-a11y/quark-a11y.yaml`
 
 ## Custom Logos
 
-To add a custom logo, you should put the log into the `user/themes/ququark-a11yark/images/logo` folder.  Standard image formats are support (`.png`,`.jpg`, `.gif`, `.svg`, etc.).  Then reference the logo via the YAML like so:
+To add a custom logo, you should put the log into the `user/themes/quark-a11yark/images/logo` folder.  Standard image formats are support (`.png`,`.jpg`, `.gif`, `.svg`, etc.).  Then reference the logo via the YAML like so:
 
 ```yaml
 custom_logo:
@@ -82,7 +82,7 @@ custom_logo_mobile:
     - name: 'my-mobile-logo.png'    
 ```
 
-Alternatively, you can you use the drag-n-drop "Custom Logo" field in the Quark theme options.
+Alternatively, you can you use the drag-n-drop "Custom Logo" field in the Quark-A11y theme options.
 
 ## Page Overrides
 
