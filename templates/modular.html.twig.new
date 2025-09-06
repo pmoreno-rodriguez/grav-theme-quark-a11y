@@ -1,0 +1,84 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set show_onpage_menu = header.onpage_menu == true or header.onpage_menu is null %}
+
+{% block javascripts %}
+    {% if show_onpage_menu %}
+        {% do assets.add('theme://js/singlepagenav.min.js') %}
+    {% endif %}
+    {{ parent() }}
+{% endblock %}
+
+{% block bottom %}
+    {{ parent() }}
+    {% if show_onpage_menu %}
+        <script>
+        // singlePageNav initialization & configuration
+        document.addEventListener('DOMContentLoaded', function() {
+            var navigation = document.querySelector('ul.navigation');
+            if (navigation) {
+                $(navigation).singlePageNav({
+                    offset: document.getElementById('header') ? document.getElementById('header').offsetHeight : 0,
+                    filter: ':not(.external)',
+                    updateHash: true,
+                    currentClass: 'active',
+                    throttle: 250,
+                    easing: 'swing'
+                });
+            }
+        });
+        </script>
+    {% endif %}
+{% endblock %}
+
+{% block header_navigation %}
+    {% if show_onpage_menu %}
+        <ul class="navigation" role="menubar" aria-label="{{ 'THEME_QUARK.ARIA_LABELS.PAGE_SECTIONS_NAVIGATION'|t }}">
+        {% for module in page.collection() if module.header.visible is not same as(false) %}
+            {% set current_module = (module.active or module.activeChild) ? 'active' : '' %}
+            {% set module_id = module.menu|hyphenize %}
+            <li role="none">
+                <a class="{{ current_module }}" href="#{{ module_id }}" role="menuitem">
+                    {{ module.menu }}
+                </a>
+            </li>
+        {% endfor %}
+        {% for mitem in site.menu %}
+            <li role="none">
+                <a {% if mitem.class %}class="{{ mitem.class }}"{% endif %} href="{{ mitem.url }}" role="menuitem"
+                   {% if mitem.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                    {% if mitem.icon %}<i class="fa fa-{{ mitem.icon }}" aria-hidden="true"></i>{% endif %}
+                    {{ mitem.text }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        {{  parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block hero %}
+    {% for module in page.collection() if module.template == 'modular/hero' %}
+        <div id="{{ module.menu|hyphenize }}" role="region" aria-labelledby="hero-heading-{{ module.menu|hyphenize }}">
+            <h2 id="hero-heading-{{ module.menu|hyphenize }}" class="visually-hidden">
+                {{ module.menu }}
+            </h2>
+            {{ module.content|raw }}
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
+{% block body %}
+    <main id="main-content" role="main" aria-label="{{ 'THEME_QUARK_A11Y.ARIA_LABELS.MAIN_CONTENT'|t }}">
+        {% for module in page.collection() if module.template != 'modular/hero' %}
+            <div id="{{ module.menu|hyphenize }}" class="content-section" role="region" aria-labelledby="section-heading-{{ module.menu|hyphenize }}">
+                <h2 id="section-heading-{{ module.menu|hyphenize }}" class="visually-hidden">
+                    {{ module.menu }}
+                </h2>
+                {{ module.content|raw }}
+            </div>
+        {% endfor %}
+    </main>
+{% endblock %}

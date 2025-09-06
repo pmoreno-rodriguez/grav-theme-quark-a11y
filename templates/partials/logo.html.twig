@@ -1,0 +1,17 @@
+{% set logo = theme_var(mobile ? 'custom_logo_mobile' : 'custom_logo') %}
+<a href="{{ home_url }}" class="navbar-brand mr-10" aria-label="{{ 'THEME_QUARK_A11Y.ARIA_LABELS.GO_HOME'|t }}">
+    {% if logo %}
+        {% set logo_file = (logo|first).name %}
+        {% set extension = logo_file|split('.')|last %}
+        
+        {% if extension == 'svg' %}
+            {% include('@images/logo/' ~ logo_file) %}
+        {% else %}
+            <img src="{{ url('theme://images/logo/' ~ logo_file) }}" alt="{{ site.title }}" width="auto" height="auto">
+        {% endif %}
+    {% else %}
+        <div class="default-logo" aria-label="{{ site.title }}">
+            {% include('@images/quark-a11y-logo.svg') %}
+        </div>
+    {% endif %}
+</a>
