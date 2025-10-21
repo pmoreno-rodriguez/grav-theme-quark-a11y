@@ -50,6 +50,26 @@
     box-shadow: 0 10px 45px -9px rgba(0,0,0,0.1);
   }
 
+  .card-body {
+    a {
+    transition: all 0.3s ease-in-out;
+    border-bottom: dotted 1px;
+    text-decoration: none;
+    position: relative;
+    
+    &:hover {
+      text-decoration: none;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+    }
+
+  a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  }
+  }
+
   .card-footer {
     text-align: right;
   }
@@ -58,9 +78,6 @@
     font-size: 13px;
   }
 
-  .label {
-
-  }
 }
 
 /** Blog Item **/
@@ -69,6 +86,26 @@
 
   h2 {
     margin-bottom: 0.5rem;
+  }
+}
+
+.content-item {
+   a {
+    transition: all 0.3s ease-in-out;
+    border-bottom: dotted 1px;
+    text-decoration: none;
+    position: relative;
+    
+    &:hover {
+      text-decoration: none;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+    }
+
+  a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
   }
 }
 

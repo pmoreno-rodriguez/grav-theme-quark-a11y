@@ -14,4 +14,21 @@ body.sticky-footer {
   color: #acb3c2;
   padding: 1rem $horiz-padding 0;
   text-align: center;
+  a {
+    transition: all 0.3s ease-in-out;
+    border-bottom: dotted 1px;
+    text-decoration: none;
+    position: relative;
+    
+    &:hover {
+      text-decoration: none;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+    }
+
+  a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  }
 }
