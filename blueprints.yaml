@@ -1,7 +1,7 @@
 name: Quark-A11y
 slug: quark-a11y
 type: theme
-version: 1.0.0
+version: 1.1.0
 description: Quark theme with accessibility improvements
 icon: microchip
 author:
@@ -10,6 +10,7 @@ author:
   url: https://pmdesign.dev
 homepage: https://github.com/pmoreno-rodriguez/grav-theme-quark-a11y
 demo: https://quark-a11y.pmdesign.dev/
+docs: https://github.com/pmoreno-rodriguez/grav-theme-quark-a11y/blob/main/README.md
 keywords: quark, spectre, theme, core, modern, fast, responsive, html5, css3, accessibility, semantic
 bugs: https://github.com/pmoreno-rodriguez/grav-theme-quark-a11y/issues
 readme: https://github.com/pmoreno-rodriguez/grav-theme-quark-a11y/blob/develop/README.md
