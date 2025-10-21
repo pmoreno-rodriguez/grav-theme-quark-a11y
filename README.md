@@ -158,4 +158,4 @@ image_align: right
 
 # Documentation 
 
-You can read extra documentation of Future2021 Theme at [https://pmoreno-rodriguez.github.io/#/./gravthemes/quark-a11y/index](https://pmoreno-rodriguez.github.io/#/./gravthemes/quark-a11y/index). This is [Spanish document site for Future2021 Theme](https://pmdesign.dev/temas/quark11-a11y)
+You can read extra documentation of Quark-A11y Theme at [https://pmoreno-rodriguez.github.io/#/./gravthemes/quark-a11y/index](https://pmoreno-rodriguez.github.io/#/./gravthemes/quark-a11y/index). This is [Spanish document site for Quark-A11y Theme](https://pmdesign.dev/temas/quark-a11y)
