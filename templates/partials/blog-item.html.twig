@@ -7,7 +7,7 @@
         <h3>{{ page.header.subtitle }}</h3>
         {% endif %}
         {% include 'partials/blog/date.html.twig' %}
-        {% include 'partials/blog/taxonomy.html.twig' %}
+        {% include 'partials/blog/taxonomy.html.twig' with {'label_style': 'label-primary'} %}
     </header>
 {% endif %}
 
@@ -28,7 +28,7 @@
     {% endif %}
 
     {% if not page.isFirst %}
-        <a class="btn" href="{{ page.nextSibling.url }}" rel="next" aria-label={{ 'THEME_QUARK_A11Y.ARIA_LABELS.BLOG_POST_NEXT'|t }}{{ page.nextSibling.title }}">
+        <a class="btn" href="{{ page.nextSibling.url }}" rel="next" aria-label="{{ 'THEME_QUARK_A11Y.ARIA_LABELS.BLOG_POST_NEXT'|t }}{{ page.nextSibling.title }}">
             {{ 'THEME_QUARK_A11Y.BLOG.ITEM.NEXT_POST'|t }} <i class="fa fa-angle-right" aria-hidden="true"></i>
         </a>
     {% endif %}
