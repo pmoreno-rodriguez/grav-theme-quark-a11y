@@ -152,3 +152,10 @@ The text box provides a single option to control if any image found in the page 
 image_align: right
 ```
 
+# Demo page
+
+[https://quark-a11y.pmdesign.dev](https://quark-a11y.pmdesign.dev)
+
+# Documentation 
+
+You can read extra documentation of Future2021 Theme at [https://pmoreno-rodriguez.github.io/#/./gravthemes/quark-a11y/index](https://pmoreno-rodriguez.github.io/#/./gravthemes/quark-a11y/index). This is [Spanish document site for Future2021 Theme](https://pmdesign.dev/temas/quark11-a11y)
