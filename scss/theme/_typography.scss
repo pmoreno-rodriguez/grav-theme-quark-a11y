@@ -3,7 +3,7 @@ html {
 }
 
 // Header Overrides
-h1, h2, h3, h4, h5, h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin-top: 2rem;
   font-family: $title-font-family;
   color: darken($body-font-color, 10%);
@@ -75,7 +75,7 @@ pre code, pre.xdebug-var-dump{
   display: block;
   padding: 1rem !important;
   line-height: 1.5;
-  color: inherit;
+  color: $body-font-color;
   border-radius: 2px;
   overflow-x: auto;
 }
@@ -92,6 +92,12 @@ pre {
   code:not(.hljs):not([class*="language-"]) {
     background: #f8f8f8;
   }
+}
+
+code {
+  @include label-base();
+  @include label-variant($body-font-color, lighten($code-color, 52.5%));
+  font-size: 85%;
 }
 
 // Icon Tweaks
@@ -123,7 +129,7 @@ strong {
 .text-light {
   color: rgba($light-color, 0.8);
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     color: rgba($light-color, 0.9);
   }
 }
