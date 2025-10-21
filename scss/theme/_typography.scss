@@ -75,7 +75,7 @@ pre code, pre.xdebug-var-dump{
   display: block;
   padding: 1rem !important;
   line-height: 1.5;
-  color: $body-font-color;
+  color: inherit;
   border-radius: 2px;
   overflow-x: auto;
 }
@@ -92,12 +92,6 @@ pre {
   code:not(.hljs):not([class*="language-"]) {
     background: #f8f8f8;
   }
-}
-
-code {
-  @include label-base();
-  @include label-variant($body-font-color, lighten($code-color, 52.5%));
-  font-size: 85%;
 }
 
 // Icon Tweaks
