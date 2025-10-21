@@ -13,7 +13,14 @@ form:
               type: select
               label: Image position
               classes: fancy
+              size: medium
               default: left
               options:
                 'left': 'Left'
                 'right': 'Right'
+            header.class:
+              type: text
+              label: Classes
+              help: 'Additional CSS classes for this section'
+              size: medium
+              
