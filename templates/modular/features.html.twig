@@ -1,5 +1,5 @@
 {% set grid_size = theme_var('grid-size') %}
-{% set columns = page.header.class == 'small' ? 'col-3 col-md-4 col-sm-6' : 'col-4 col-md-6 col-sm-12' %}
+{% set columns = page.header.layout == 'small' ? 'col-3 col-md-4 col-sm-6' : 'col-4 col-md-6 col-sm-12' %}
 <section class="section modular-features {{ page.header.class }}" aria-label="Features section">
     <div class="container {{ grid_size }}">
         <div class="frame-box">
@@ -16,7 +16,7 @@
                     <div class="feature-icon">
                         <i class="fa fa-fw {{ feature.icon }}" aria-hidden="true"></i>
                         {% if feature.header %}
-                            <h6>{{ feature.header }}</h6>
+                            <span>{{ feature.header }}</span>
                         {% endif %}
                     </div>
                     
