@@ -1,3 +1,9 @@
+# v1.1.1
+##  10/21/2025
+
+1. [](#bugfix)
+    * Added missing `_labels.scss` partial to `theme.scss`
+
 # v1.1.0
 ##  10/21/2025
 
