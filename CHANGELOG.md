@@ -1,3 +1,9 @@
+# v1.1.2
+##  11/01/2025
+
+1. [](#improved)
+    * Standardized Twig template formatting using [CS fixer tool](https://github.com/VincentLanglet/Twig-CS-Fixer)
+
 # v1.1.1
 ##  10/21/2025
 
