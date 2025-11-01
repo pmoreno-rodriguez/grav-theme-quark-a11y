@@ -18,7 +18,7 @@
 {% endblock %}
 
 {% block hero %}
-    {% include 'partials/hero.html.twig' with {id: 'blog-hero', content: page.content, hero_image: blog_image} %}
+    {{ include('partials/hero.html.twig', {id: 'blog-hero', content: page.content, hero_image: blog_image}) }}
 {% endblock %}
 
 {% block body %}
@@ -26,27 +26,27 @@
     <div class="container {{ grid_size }}">
         {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
             <nav aria-label="{{ 'THEME_QUARK_A11Y.ARIA_LABELS.BREADCRUMB_NAVIGATION'|t }}">
-                {% include 'partials/breadcrumbs.html.twig' %}
+                {{ include('partials/breadcrumbs.html.twig') }}
             </nav>
         {% endif %}
-        
+
         {% embed 'partials/layout.html.twig' with {blog: page} %}
             {% block item %}
                 <div class="bricklayer" role="main" aria-label="{{ 'THEME_QUARK_A11Y.ARIA_LABELS.BLOG_POSTS_LIST'|t }}">
                     {% for child in collection %}
-                        {% include 'partials/blog-list-item.html.twig' with {blog: page, page: child} %}
+                        {{ include('partials/blog-list-item.html.twig', {blog: page, page: child}) }}
                     {% endfor %}
                 </div>
-                
+
                 {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}
                     <nav id="listing-footer" aria-label="{{ 'THEME_QUARK_A11Y.ARIA_LABELS.PAGINATION_NAVIGATION'|t }}">
-                        {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: collection.params.pagination} %}
+                        {{ include('partials/pagination.html.twig', {base_url: page.url, pagination: collection.params.pagination}) }}
                     </nav>
                 {% endif %}
             {% endblock %}
-            
+
             {% block sidebar %}
-                {% include 'partials/sidebar.html.twig' %}
+                {{ include('partials/sidebar.html.twig') }}
             {% endblock %}
         {% endembed %}
     </div>

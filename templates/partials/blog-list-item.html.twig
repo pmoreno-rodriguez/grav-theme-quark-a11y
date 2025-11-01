@@ -3,20 +3,20 @@
     {% if image %}
     <div class="card-image">
         <a href="{{ page.url }}" aria-label="{{ 'THEME_QUARK_A11Y.ARIA_LABELS.BLOG_READ_FULL_POST'|t }}{{ page.title }}">
-            {{ image.cropZoom(800,400).loading('lazy').decoding('async').html(page.title, page.title)|raw }}
+            {{ image.cropZoom(800, 400).loading('lazy').decoding('async').html(page.title, page.title)|raw }}
         </a>
     </div>
     {% endif %}
-    
+
     <div class="card-header">
         <div class="card-subtitle text-gray">
-            {% include 'partials/blog/date.html.twig' %}
+            {{ include('partials/blog/date.html.twig') }}
         </div>
         <div class="card-title">
-            {% include 'partials/blog/title.html.twig' with {title_level: 'h3'} %}
+            {{ include('partials/blog/title.html.twig', {title_level: 'h3'}) }}
         </div>
     </div>
-    
+
     <div class="card-body" aria-label="{{ 'THEME_QUARK_A11Y.ARIA_LABELS.BLOG_POST_SUMMARY'|t }}">
         {% if page.summary != page.content %}
             {{ page.summary|raw }}
@@ -24,8 +24,8 @@
             {{ page.content|raw }}
         {% endif %}
     </div>
-    
+
     <div class="card-footer">
-        {% include 'partials/blog/taxonomy.html.twig' with {'label_style': 'label-primary'} %}
+        {{ include('partials/blog/taxonomy.html.twig', {label_style: 'label-primary'}) }}
     </div>
 </article>

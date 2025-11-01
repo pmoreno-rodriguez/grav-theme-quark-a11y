@@ -62,7 +62,7 @@
 
   <section class="lightbox-gallery" aria-labelledby="gallery-heading">
     <h2 id="gallery-heading" class="visually-hidden">{{ page.title }} Gallery</h2>
-    
+
     <div class="lightbox-gallery__columns" role="list" aria-label="Gallery images">
       {% set gallery = md5(page.url) %}
       {% for item in data.items %}
@@ -70,18 +70,18 @@
           {% set item_image = page.media[item.image] %}
           {% set title = item.title|default('Image ' ~ loop.index) %}
           {% set alt_text = item.alt|default('Gallery image ' ~ loop.index ~ ' - ' ~ page.title) %}
-          
+
           <figure>
-            {% include "partials/lightbox.html.twig" with {
-              'title': title,
-              'alt_text': alt_text,
-              'desc': item.desc,
-              'item_image': item_image,
-              'thumb_width': thumb_width,
-              'thumb_height': thumb_height,
-              'gallery': gallery
-            } %}
-            
+            {{ include('partials/lightbox.html.twig', {
+              title: title,
+              alt_text: alt_text,
+              desc: item.desc,
+              item_image: item_image,
+              thumb_width: thumb_width,
+              thumb_height: thumb_height,
+              gallery: gallery,
+            }) }}
+
             {% if item.title %}
               <figcaption class="visually-hidden">{{ item.title }}</figcaption>
             {% endif %}
@@ -89,7 +89,7 @@
         </div>
       {% endfor %}
     </div>
-    
+
     <div class="visually-hidden" aria-hidden="true">
       {% for item in data.items %}
         {% if item.desc %}

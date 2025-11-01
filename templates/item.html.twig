@@ -13,10 +13,10 @@
             {% if page.header.subtitle %}
                 <h2>{{ page.header.subtitle }}</h2>
             {% endif %}
-            {% include 'partials/blog/date.html.twig' %}
-            {% include 'partials/blog/taxonomy.html.twig' with {'label_style': 'label-light'} %}
+            {{ include('partials/blog/date.html.twig') }}
+            {{ include('partials/blog/taxonomy.html.twig', {label_style: 'label-light'}) }}
         {% endset %}
-        {% include 'partials/hero.html.twig' with {id: 'blog-hero'} %}
+        {{ include('partials/hero.html.twig', {id: 'blog-hero'}) }}
     {% endif %}
 {% endblock %}
 
@@ -26,23 +26,23 @@
 
         {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
             <nav aria-label="{{ 'THEME_QUARK_A11Y.ARIA_LABELS.BREADCRUMB_NAVIGATION'|t }}">
-                {% include 'partials/breadcrumbs.html.twig' %}
+                {{ include('partials/breadcrumbs.html.twig') }}
             </nav>
         {% endif %}
 
         {% embed 'partials/layout.html.twig' %}
             {% block item %}
-                {% include 'partials/blog-item.html.twig' %}
+                {{ include('partials/blog-item.html.twig') }}
 
                 {% if show_pagination and config.plugins.pagination.enabled %}
                     <nav aria-label="{{ 'THEME_QUARK_A11Y.ARIA_LABELS.PAGINATION_NAVIGATION'|t }}">
-                        {% include 'partials/pagination.html.twig' %}
+                        {{ include('partials/pagination.html.twig') }}
                     </nav>
                 {% endif %}
             {% endblock %}
-            
+
             {% block sidebar %}
-                {% include 'partials/sidebar.html.twig' %}
+                {{ include('partials/sidebar.html.twig') }}
             {% endblock %}
         {% endembed %}
 

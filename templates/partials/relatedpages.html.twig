@@ -8,7 +8,7 @@
                         <span class="label label-primary">{{ score }}</span>
                     </div>
                 {% endif %}
-                <a href="{{ related.url }}" 
+                <a href="{{ related.url }}"
                    title="{{ related.title }}"
                    aria-label="{{ 'THEME_QUARK_A11Y.ARIA_LABELS.RELATED_POST'|t }} {{ related.title }}{% if config.plugins.relatedpages.show_score %} ({{ 'THEME_QUARK_A11Y.ARIA_LABELS.RELEVANCE_SCORE'|t }}{{ score }}){% endif %}">
                     {{ related.title }}

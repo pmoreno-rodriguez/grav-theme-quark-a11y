@@ -1,22 +1,22 @@
-{% set feed_url = blog.url == '/' or blog.url == base_url_relative ? (base_url_relative~'/'~blog.slug) : blog.url %}
+{% set feed_url = blog.url == '/' or blog.url == base_url_relative ? (base_url_relative ~ '/' ~ blog.slug) : blog.url %}
 {% set new_base_url = blog.url == '/' ? '' : blog.url %}
 
 <div class="sidebar-content-wrapper" role="region" aria-label="Sidebar content">
-    
+
     {% if config.plugins.simplesearch.enabled %}
     <section class="sidebar-content" aria-labelledby="search-heading">
         <h3 id="search-heading" class="visually-hidden">{{ 'THEME_QUARK_A11Y.SIDEBAR.SEARCH.HEADLINE'|t|default('Search') }}</h3>
-        {% include 'partials/simplesearch_searchbox.html.twig' %}
+        {{ include('partials/simplesearch_searchbox.html.twig') }}
     </section>
     {% endif %}
-    
+
     {% if config.plugins.relatedpages.enabled and related_pages|length > 0 %}
     <section class="sidebar-content" aria-labelledby="related-posts-heading">
         <h4 id="related-posts-heading">{{ 'THEME_QUARK_A11Y.SIDEBAR.RELATED_POSTS.HEADLINE'|t }}</h4>
-        {% include 'partials/relatedpages.html.twig' %}
+        {{ include('partials/relatedpages.html.twig') }}
     </section>
     {% endif %}
-    
+
     {% if config.plugins.random.enabled %}
     <section class="sidebar-content" aria-labelledby="random-article-heading">
         <h4 id="random-article-heading">{{ 'THEME_QUARK_A11Y.SIDEBAR.RANDOM_ARTICLE.HEADLINE'|t }}</h4>
@@ -36,17 +36,17 @@
     {% if config.plugins.taxonomylist.enabled %}
     <section class="sidebar-content" aria-labelledby="popular-tags-heading">
         <h4 id="popular-tags-heading">{{ 'THEME_QUARK_A11Y.SIDEBAR.POPULAR_TAGS.HEADLINE'|t }}</h4>
-        {% include 'partials/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy':'tag', 'children_only':true} %}
+        {{ include('partials/taxonomylist.html.twig', {base_url: new_base_url, taxonomy: 'tag', children_only: true}) }}
     </section>
     {% endif %}
-    
+
     {% if config.plugins.archives.enabled %}
     <section class="sidebar-content" aria-labelledby="archives-heading">
         <h4 id="archives-heading">{{ 'THEME_QUARK_A11Y.SIDEBAR.ARCHIVES.HEADLINE'|t }}</h4>
-        {% include 'partials/archives.html.twig' with {'base_url':new_base_url} %}
+        {{ include('partials/archives.html.twig', {base_url: new_base_url}) }}
     </section>
     {% endif %}
-    
+
     {% if config.plugins.feed.enabled %}
     <section class="sidebar-content syndicate" aria-labelledby="syndicate-heading">
         <h4 id="syndicate-heading">{{ 'THEME_QUARK_A11Y.SIDEBAR.SYNDICATE.HEADLINE'|t }}</h4>

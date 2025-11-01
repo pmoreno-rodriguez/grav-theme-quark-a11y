@@ -2,12 +2,12 @@
 
 {% if not hero_image_name %}
     <header class="content-title text-center">
-        {% include 'partials/blog/title.html.twig' with {title_level: 'h2'} %}
+        {{ include('partials/blog/title.html.twig', {title_level: 'h2'}) }}
         {% if page.header.subtitle %}
         <h3>{{ page.header.subtitle }}</h3>
         {% endif %}
-        {% include 'partials/blog/date.html.twig' %}
-        {% include 'partials/blog/taxonomy.html.twig' with {'label_style': 'label-primary'} %}
+        {{ include('partials/blog/date.html.twig') }}
+        {{ include('partials/blog/taxonomy.html.twig', {label_style: 'label-primary'}) }}
     </header>
 {% endif %}
 
@@ -16,7 +16,7 @@
     </div>
 
     {% if page.header.continue_link is same as(true) and config.plugins.comments.enabled %}
-        {% include 'partials/comments.html.twig' %}
+        {{ include('partials/comments.html.twig') }}
     {% endif %}
 </article>
 

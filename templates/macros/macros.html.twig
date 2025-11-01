@@ -3,9 +3,9 @@
   {% for p in page.children.visible %}
     {% set active_page = (p.active or p.activeChild) ? 'active' : '' %}
     {% set has_children = p.children.visible.count > 0 %}
-    
+
     <li role="none">
-      <a href="{{ p.url }}" 
+      <a href="{{ p.url }}"
          class="{{ active_page }}"
          role="menuitem"
          aria-haspopup="{{ has_children ? 'true' : 'false' }}"
@@ -13,7 +13,7 @@
          {% if p.active %}aria-current="page"{% endif %}>
         {{ p.menu }}
       </a>
-      
+
       {% if has_children %}
       <ul role="menu" aria-label="{{ 'THEME_QUARK_A11Y.ARIA_LABELS.SUBMENU_FOR'|t }}{{ p.menu }}">
         {{ macros.nav_loop(p) }}

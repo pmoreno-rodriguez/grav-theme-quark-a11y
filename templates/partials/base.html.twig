@@ -11,7 +11,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% include 'partials/metadata.html.twig' %}
+    {{ include('partials/metadata.html.twig') }}
 
     <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}">
     <link rel="canonical" href="{{ page.url(true, true) }}">
@@ -19,21 +19,21 @@
 
 {% block stylesheets %}
     {% do assets.addCss('theme://css/custom.css', 5) %}
-    {% do assets.addCss('theme://css-compiled/theme'~compress, 10) %}
+    {% do assets.addCss('theme://css-compiled/theme' ~ compress, 10) %}
     {% do assets.addCss('theme://css/line-awesome.min.css', 15) %}
-    {% do assets.addCss('theme://css-compiled/spectre'~compress, 20) %}
+    {% do assets.addCss('theme://css-compiled/spectre' ~ compress, 20) %}
     {% if theme_var('spectre.exp') %}
-        {% do assets.addCss('theme://css-compiled/spectre-exp'~compress, 25) %}
+        {% do assets.addCss('theme://css-compiled/spectre-exp' ~ compress, 25) %}
     {% endif %}
     {% if theme_var('spectre.icons') %}
-        {% do assets.addCss('theme://css-compiled/spectre-icons'~compress, 30) %}
+        {% do assets.addCss('theme://css-compiled/spectre-icons' ~ compress, 30) %}
     {% endif %}
 {% endblock %}
 
 {% block javascripts %}
     {% do assets.addJs('jquery', 101) %}
-    {% do assets.addJs('theme://js/jquery.treemenu.js', {group:'bottom'}) %}
-    {% do assets.addJs('theme://js/site.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/jquery.treemenu.js', {group: 'bottom'}) %}
+    {% do assets.addJs('theme://js/site.js', {group: 'bottom'}) %}
 {% endblock %}
 
 {% block assets deferred %}
@@ -48,18 +48,18 @@
             <div class="container {{ grid_size }}">
                 <nav class="navbar">
                     <div class="navbar-section logo">
-                        {% include 'partials/logo.html.twig' %}
+                        {{ include('partials/logo.html.twig') }}
                     </div>
                     <div class="navbar-section desktop-menu">
 
                         <nav class="dropmenu animated">
                         {% block header_navigation %}
-                            {% include 'partials/navigation.html.twig' %}
+                            {{ include('partials/navigation.html.twig') }}
                         {% endblock %}
                         </nav>
 
                         {% if config.plugins.login.enabled and grav.user.username %}
-                            <div class="login-status-wrapper"><i class="fa fa-user" aria-hidden="true"></i> {% include 'partials/login-status.html.twig' ignore missing %}</div>
+                            <div class="login-status-wrapper"><i class="fa fa-user" aria-hidden="true"></i> {{ include('partials/login-status.html.twig', [], true, true) }}</div>
                         {% endif %}
 
                     </div>
@@ -85,7 +85,7 @@
             <div id="body-wrapper" class="section">
                 <div class="container {{ grid_size }}">
                     {% block messages %}
-                        {% include 'partials/messages.html.twig' ignore missing %}
+                        {{ include('partials/messages.html.twig', [], true, true) }}
                     {% endblock %}
                     {{ block('content_surround') }}
                 </div>
@@ -96,17 +96,17 @@
     </div>
 
     {% block footer %}
-        {% include 'partials/footer.html.twig' %}
+        {{ include('partials/footer.html.twig') }}
     {% endblock %}
 
     {% block mobile %}
     <div class="mobile-container">
         <div class="overlay" id="overlay">
             <div class="mobile-logo">
-                {% include 'partials/logo.html.twig' with {mobile: true} %}
+                {{ include('partials/logo.html.twig', {mobile: true}) }}
             </div>
             <nav class="overlay-menu">
-                {% include 'partials/navigation.html.twig' with {tree: true} %}
+                {{ include('partials/navigation.html.twig', {tree: true}) }}
             </nav>
         </div>
     </div>
